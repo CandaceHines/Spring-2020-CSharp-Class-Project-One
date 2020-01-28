@@ -1,0 +1,11 @@
+C:\Users\canda\Documents\Source\src\bin\Debug\netcoreapp3.1\src.exe
+C:\Users\canda\Documents\Source\src\bin\Debug\netcoreapp3.1\src.deps.json
+C:\Users\canda\Documents\Source\src\bin\Debug\netcoreapp3.1\src.runtimeconfig.json
+C:\Users\canda\Documents\Source\src\bin\Debug\netcoreapp3.1\src.runtimeconfig.dev.json
+C:\Users\canda\Documents\Source\src\bin\Debug\netcoreapp3.1\src.dll
+C:\Users\canda\Documents\Source\src\bin\Debug\netcoreapp3.1\src.pdb
+C:\Users\canda\Documents\Source\src\obj\Debug\netcoreapp3.1\src.csprojAssemblyReference.cache
+C:\Users\canda\Documents\Source\src\obj\Debug\netcoreapp3.1\src.AssemblyInfoInputs.cache
+C:\Users\canda\Documents\Source\src\obj\Debug\netcoreapp3.1\src.AssemblyInfo.cs
+C:\Users\canda\Documents\Source\src\obj\Debug\netcoreapp3.1\src.dll
+C:\Users\canda\Documents\Source\src\obj\Debug\netcoreapp3.1\src.pdb
