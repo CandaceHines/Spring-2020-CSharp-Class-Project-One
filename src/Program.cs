@@ -8,20 +8,19 @@ namespace src
         static void Main(string[] args)
         {
 
-            string continueRunning = "Y";
-            while(continueRunning == "Y")
+            var inputtingStudent = true;
+            while(inputtingStudent == "Y")
             {
                 InputStudent();
 
                 Console.WriteLine("Do you want to enter another student? (Y/N)");
-                continueRunning = Console.ReadLine();
+                inputtingStudent = Console.ReadLine().ToLower() == "y";
                 
             }
-            Console.ReadKey();
         }
-        static void InputStudent()
+        static Student InputStudent()
         {
-         Console.WriteLine("Enter Student Id");
+            Console.WriteLine("Enter Student Id");
             var studentId = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter First Name");
             var studentFirstName = Console.ReadLine();
@@ -46,7 +45,8 @@ namespace src
             studentRecord.LastClassCompletedOn = lastCompletedOn;
             Console.WriteLine($"Student Id | Name |  Class "); ;
             Console.WriteLine($"{studentRecord.StudentId} | {studentRecord.FirstName} {studentRecord.LastName} | {studentRecord.ClassName} "); ;
-            
+            Console.ReadKey();       
+            return studentRecord;       
             
         }
     }
