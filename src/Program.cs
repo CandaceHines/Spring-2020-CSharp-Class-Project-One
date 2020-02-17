@@ -1,5 +1,5 @@
 ﻿using System;
-using src.classes;
+using src;
 
 namespace src
 {
