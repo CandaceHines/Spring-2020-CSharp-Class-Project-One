@@ -1,5 +1,8 @@
 using System;
-namespace src.classes
+using System.Collections.Generic;
+
+
+namespace src
 {
     public class Student
     {
@@ -10,5 +13,9 @@ namespace src.classes
         public DateTimeOffset StartDate { get; set; }
         public string LastClassCompleted { get; set; }
         public DateTimeOffset LastClassCompletedOn { get; set; }
+
+        //added for challenge 2
+        public string FullName => $"{FirstName} {LastName}";
+        public string StudentDisplay => $"{StudentId} | {FirstName} {LastName} | {ClassName} ";
     }
 }
