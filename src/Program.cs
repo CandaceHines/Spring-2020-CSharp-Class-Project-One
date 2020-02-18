@@ -7,7 +7,7 @@ using System.IO;
 
 namespace src
 
-{
+{ 
     class Program
     {
         static List<Student> studentsList = new List<Student>();
@@ -28,7 +28,7 @@ namespace src
                        DisplayStudents();/*(studentRepository.Student); changed to () case 2,3*/
                         break;
                     case 3:
-                        SearchStudents(studentRepository.Students);
+                        SearchStudents();
                         break;
                     case 4:
                         inputtingStudent = false;
@@ -42,10 +42,7 @@ namespace src
             DisplayStudents(studentsList);
         }
 
-        private static void DisplayStudents() /*New LINQ Code*/
-        {
-                DisplayStudents(studentsList);
-        }
+
          private static void DisplayStudents(List<Student> studentsList)
         {
             if (studentsList.Any())
@@ -62,7 +59,7 @@ namespace src
         } 
 
 
-        private static void SearchStudents(List<Student> studentsList) 
+        private static void SearchStudents() 
         {
             Console.WriteLine("Search string: Enter first and last name.");
             var searchString = Console.ReadLine();
