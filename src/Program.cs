@@ -105,7 +105,28 @@ namespace src
                     break;
                 }
             }
-            /*End New Code*/
+             while (true) 
+            {  
+                Console.WriteLine("Enter Last Class Completed in Format MM/DD/YYYY");
+                var lastClassCompletedOnSuccessful = DateTimeOffset.TryParse(Console.ReadLine(), out var lastClassCompletedOn);
+                if (lastClassCompletedOnSuccessful) 
+                {
+                    student.LastClassCompletedOn = lastClassCompletedOn;    
+                    break;
+                }
+            }
+
+            while (true) 
+            {
+                Console.WriteLine("Enter Start Date in Format MM/DD/YY");
+                var startDateSuccessful = DateTime.TryParse(Console.ReadLine(), out var startDate);
+                if (startDateSuccessful) 
+                {
+                    student.StartDate = startDate;    
+                    break;
+                }
+            }
+
             Console.WriteLine("Enter First Name");
             var studentFirstName = Console.ReadLine();
             Console.WriteLine("Enter Last Name");
@@ -116,20 +137,20 @@ namespace src
             var lastClass = Console.ReadLine();
             Console.WriteLine("Enter Last Class Completed Date in format MM/dd/YYYY");
             var lastCompletedOn = DateTimeOffset.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Start Date in format MM/dd/YYYY");
-            var startDate = DateTimeOffset.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter Start Date in format MM/dd/YYYY");
+            //var startDate = DateTimeOffset.Parse(Console.ReadLine());
             /*var student = new Student  Moved to line 77*/
             /*student.StudentId = studentId;  Moved to line 96*/
             student.FirstName = studentFirstName;
             student.LastName = studentLastName;
             student.ClassName = className;
-            student.StartDate = startDate;
+            //student.StartDate = startDate;
             student.LastClassCompleted = lastClass;
-            student.LastClassCompletedOn = lastCompletedOn;
+            //student.LastClassCompletedOn = lastCompletedOn;
            /* studentRepository.Add(student);
             DisplayStudents(studentRepository.Students);
                 /*New Code*/
             studentsList.Add(student);  /*(studentRecord);*/
         }
     }
-}
+    }
