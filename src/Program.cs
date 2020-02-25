@@ -10,6 +10,27 @@ namespace src
 { 
     class Program
     {
+
+        static string _studentRepositoryPath = $"{AppDomain.CurrentDomain.BaseDirectory}\\students.json";
+
+        static IList<Student> studentsList = File.Exists(_studentRepositoryPath) ? Read() : new List<Student>();
+
+        static async void Save()
+        {
+            using (var file = File.CreateText(_studentRepositoryPath))
+            {
+                await File.WriteAllTextAsync(JsonSerializer.Serialize(studentsList));
+                //use await so that the other requests will queue up on separate CPU processes
+            }
+
+        }
+
+        static IList<Student> Read()
+        {
+            return JsonSerializer.Deserialize<IList<Student>>(File.ReadAllText(_studentRepositoryPath));
+        }
+    
+        //stopped here
         static List<Student> studentsList = new List<Student>();
         static void Main(string[] args)
         {
