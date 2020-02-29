@@ -13,25 +13,21 @@ namespace src
 
         static string _studentRepositoryPath = $"{AppDomain.CurrentDomain.BaseDirectory}\\students.json";
 
-        static IList<Student> studentsList = File.Exists(_studentRepositoryPath) ? Read() : new List<Student>();
+        static List<Student> studentsList = File.Exists(_studentRepositoryPath) ? Read() : new List<Student>();
 
-        static async void Save()
+        static void Save()
         {
-            using (var file = File.CreateText(_studentRepositoryPath))
-            {
-                await File.WriteAllTextAsync(JsonSerializer.Serialize(studentsList));
-                //use await so that the other requests will queue up on separate CPU processess
-            }
+                File.CreateText(_studentRepositoryPath).Write(JsonSerializer.Serialize(studentsList));
 
         }
 
-        static IList<Student> Read()
+        static List<Student> Read()
         {
-            return JsonSerializer.Deserialize<IList<Student>>(File.ReadAllText(_studentRepositoryPath));
+            return JsonSerializer.Deserialize<List<Student>>(File.ReadAllText(_studentRepositoryPath));
         }
     
         //stopped here
-        static List<Student> studentsList = new List<Student>();
+        //static List<Student> studentsList = new List<Student>();
         static void Main(string[] args)
         {
             var inputtingStudent = true;
@@ -57,12 +53,7 @@ namespace src
                 }
             }
         }
-
-        private static void DisplayStudents() 
-        {
-            DisplayStudents(studentsList);
-        }
-
+        private static void DisplayStudents() => DisplayStudents(studentsList); 
 
          private static void DisplayStudents(List<Student> studentsList)
         {
@@ -172,6 +163,7 @@ namespace src
             DisplayStudents(studentRepository.Students);
                 /*New Code*/
             studentsList.Add(student);  /*(studentRecord);*/
+            Save();
         }
     }
     }
